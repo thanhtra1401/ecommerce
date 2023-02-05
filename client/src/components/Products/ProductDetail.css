@@ -1,0 +1,97 @@
+.product__detail-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+}
+.product__detail-info {
+  padding: 20px;
+}
+.product__detail-header {
+  color: #333;
+}
+.product__detail-rating--gold {
+  color: rgba(255, 216, 64, 0.93);
+}
+.product__detail-evaluate {
+  color: #555;
+}
+.product__detail-price {
+  margin-top: 10px;
+  font-size: 24px;
+  color: rgb(228, 30, 44);
+  font-weight: 500;
+}
+.product__detail-buy {
+  margin: 12px 0 24px 0;
+  display: flex;
+  align-items: center;
+}
+.btn__add-cart {
+  background-color: rgb(228, 30, 44);
+  color: #fff;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 2px;
+  margin-right: 6px;
+}
+
+.btn__add-cart:hover {
+  opacity: 0.95;
+}
+.product__add-cart-icon {
+  margin-right: 4px;
+}
+.btn__inbox-now {
+  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.btn__inbox-now i {
+  font-size: 28px;
+  margin-right: 4px;
+}
+.product__detail-phone {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+}
+.product__phone-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 27px;
+}
+.product__phone-number {
+  display: flex;
+  align-items: center;
+}
+.product__phone-icon {
+  font-size: 24px;
+  margin: 0 4px 0 8px;
+  color: rgb(16, 77, 18);
+}
+.product__phone-number-detail {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(16, 77, 18);
+  line-height: 27px;
+}
+.product__detail-share {
+  display: flex;
+  align-items: center;
+}
+.product__share-text {
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.product__share-icon {
+  font-size: 26px;
+  margin: 0 4px;
+  color: rgb(11, 133, 238);
+  cursor: pointer;
+}
+.product__share-icon:hover {
+  opacity: 0.9;
+}

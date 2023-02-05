@@ -1,0 +1,13 @@
+:root {
+  --white_color: #fff;
+  --black_color: #000;
+  --text_color: #333;
+  --primary_color: #a8c93f;
+  --boder_color: #dbdbdb;
+}
+* {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
