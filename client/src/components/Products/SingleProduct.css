@@ -11,6 +11,7 @@
   transition: transform linear 0.1s;
   will-change: transform;
 }
+
 .home-product-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
@@ -62,7 +63,7 @@
 .home-product-item__like {
   font-size: 12px;
 }
-i.home-product-item__like-icon-fill {
+.home-product-item__like-icon-fill {
   display: none;
   color: red;
 }

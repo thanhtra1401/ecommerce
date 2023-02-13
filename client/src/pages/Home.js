@@ -11,6 +11,7 @@ function Home() {
   useEffect(() => {
     getProducts();
   }, []);
+
   return (
     <MainLayout>
       <div className="row">

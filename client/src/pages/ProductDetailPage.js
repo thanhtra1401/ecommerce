@@ -1,14 +1,13 @@
 import React from "react";
 import ProductDetail from "../components/Products/ProductDetail";
-
-import ProductDetailLayout from "../layouts/ProductDetailLayout";
+import OnlyHeaderLayout from "../layouts/OnlyHeaderLayout";
 
 const ProductDetailPage = () => {
   return (
     <>
-      <ProductDetailLayout>
+      <OnlyHeaderLayout>
         <ProductDetail />
-      </ProductDetailLayout>
+      </OnlyHeaderLayout>
     </>
   );
 };

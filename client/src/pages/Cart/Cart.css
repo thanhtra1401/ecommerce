@@ -1,0 +1,10 @@
+.cart__header {
+  margin: 20px 0;
+  text-align: center;
+}
+.img-thumbnail {
+  height: 80px;
+}
+.cart__product-name {
+  text-decoration: none;
+}

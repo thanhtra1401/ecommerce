@@ -10,16 +10,25 @@ const productReducer = (state, action) => {
       return {
         ...state,
         products: payload,
+        productsLoading: false,
       };
     case "PRODUCT_DETAIL_LOADED_SUCCESS":
       return {
         ...state,
         product: payload,
+        productLoading: false,
+      };
+    case "PRODUCT_DETAIL_LOADED_FAIL":
+      return {
+        ...state,
+        product: null,
+        productLoading: false,
       };
     case "PRODUCT_LOADED_FAIL":
       return {
         ...state,
         products: [],
+        productsLoading: false,
       };
     case "DELETE_PRODUCT":
       return {

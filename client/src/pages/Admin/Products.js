@@ -65,10 +65,10 @@ const Products = () => {
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Description</th>
-            <th>Image</th>
+
             <th>Price</th>
             <th>Amount</th>
+            <th>Upload</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -77,13 +77,12 @@ const Products = () => {
             <tr key={product.id}>
               <td>{product.id}</td>
               <td>{product.name}</td>
-              <td>{product.description}</td>
-              <td></td>
+
               <td>{product.price}</td>
               <td>{product.amount}</td>
               <td>
-                <div className="d-flex justify-content-between">
-                  <form>
+                <div>
+                  <form className="d-flex ">
                     <input
                       type="file"
                       name="file"
@@ -98,11 +97,11 @@ const Products = () => {
                         let formData = new FormData();
                         formData.append("product-image", image.data);
                         try {
-                          const response = await axios.post(
+                          await axios.post(
                             `http://localhost:4000/api/products/upload-image/${product.id}`,
                             formData
                           );
-                          console.log(response);
+                          alert("upload thành công");
                         } catch (error) {
                           console.log(1234);
                         }
@@ -111,17 +110,19 @@ const Products = () => {
                       Submit
                     </button>
                   </form>
-                  <i
-                    class="fa-solid fa-pen-to-square"
-                    role="button"
-                    onClick={handleUpdate.bind(this, product.id)}
-                  ></i>
-                  <i
-                    class="fa-solid fa-trash"
-                    role="button"
-                    onClick={deleteProduct.bind(this, product.id)}
-                  ></i>
                 </div>
+              </td>
+              <td className="d-flex justify-content-between">
+                <i
+                  class="fa-solid fa-pen-to-square"
+                  role="button"
+                  onClick={handleUpdate.bind(this, product.id)}
+                ></i>
+                <i
+                  class="fa-solid fa-trash"
+                  role="button"
+                  onClick={deleteProduct.bind(this, product.id)}
+                ></i>
               </td>
             </tr>
           ))}

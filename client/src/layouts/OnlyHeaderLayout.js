@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { Container } from "react-bootstrap";
-import Footer from "../components/Footer/Footer";
-import HeaderDefault from "../components/Header/HeaderDefault";
-import HeaderLogined from "../components/Header/HeaderLogined";
+
 import UserNav from "../components/Navs/UserNav";
 import { AuthContext } from "../context/AuthContext";
+import HeaderLogined from "./../components/Header/HeaderLogined";
+import HeaderDefault from "./../components/Header/HeaderDefault";
 
-const ProductDetailLayout = (props) => {
+const OnlyHeaderLayout = (props) => {
   const {
     authState: { isAuthenticated },
   } = useContext(AuthContext);
@@ -16,7 +16,6 @@ const ProductDetailLayout = (props) => {
         <HeaderLogined />
         <UserNav />
         <Container>{props.children}</Container>
-        <Footer />
       </>
     );
   } else {
@@ -26,10 +25,9 @@ const ProductDetailLayout = (props) => {
         <UserNav />
 
         <Container>{props.children}</Container>
-        <Footer />
       </>
     );
   }
 };
 
-export default ProductDetailLayout;
+export default OnlyHeaderLayout;

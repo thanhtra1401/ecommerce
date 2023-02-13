@@ -1,12 +1,15 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./UserNav.css";
 const UserNav = () => {
   return (
     <div className="category">
       <Container>
         <ul className="category__list">
-          <li className="category__item ">Trang chủ</li>
+          <Link to="/" className="category__item ">
+            Trang chủ
+          </Link>
           <li className="category__item ">
             Áo đội tuyển quốc gia
             <ul className="national_list">

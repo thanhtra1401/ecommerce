@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./HeaderLogined.css";
 import { AuthContext } from "./../../context/AuthContext";
 import { Container } from "react-bootstrap";
+import { CartContext } from "../../context/CartContext";
 
 const HeaderLogined = () => {
   const navigate = useNavigate();
@@ -12,6 +13,11 @@ const HeaderLogined = () => {
   const toProfile = () => {
     navigate("/profile");
   };
+
+  const toCart = () => {
+    navigate("/cart");
+  };
+  const { cartState } = useContext(CartContext);
 
   const {
     logoutUser,
@@ -33,17 +39,19 @@ const HeaderLogined = () => {
                 placeholder="Tìm kiếm"
               />
               <div className="header__search-btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
               </div>
             </div>
-            <div className="header__cart">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span className="header__cart-amount">2</span>
+            <div className="header__cart" onClick={toCart}>
+              <i className="fa-solid fa-cart-shopping"></i>
+              <span className="header__cart-amount">
+                {cartState.cartItems.reduce((a, c) => a + c.quantity, 0)}
+              </span>
             </div>
           </div>
           <div className="header__nav">
             <div className="header__nav-notification">
-              <i class="fa-regular fa-bell"></i>
+              <i className="fa-regular fa-bell"></i>
             </div>
             <div className="header__user">
               <img

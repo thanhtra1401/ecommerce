@@ -84,4 +84,19 @@ const login = async (req, res) => {
     res.send({ success: false, message: "Không tìm thấy email" });
   }
 };
-module.exports = { register, login, auth };
+
+//get detail user
+const getDetailUser = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const userDetail = await User.findOne({
+      where: {
+        id,
+      },
+    });
+    res.status(200).send({ success: true, userDetail });
+  } catch (error) {
+    res.status(500).send({ success: false, error });
+  }
+};
+module.exports = { register, login, auth, getDetailUser };

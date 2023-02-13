@@ -12,6 +12,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
       },
+      slug: {
+        type: Sequelize.STRING,
+      },
       description: {
         type: Sequelize.TEXT,
       },
@@ -31,6 +34,9 @@ module.exports = {
         type: Sequelize.STRING,
       },
       sold: {
+        type: Sequelize.INTEGER,
+      },
+      rating: {
         type: Sequelize.INTEGER,
       },
       checked: {

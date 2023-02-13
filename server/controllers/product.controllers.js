@@ -2,14 +2,28 @@ const { Product } = require("../models");
 
 // create product
 const createProduct = async (req, res) => {
-  const { name, description, image, price, amount } = req.body;
+  const {
+    name,
+    slug,
+    description,
+    image,
+    price,
+    amount,
+    category,
+    sold,
+    rating,
+  } = req.body;
   try {
     const newProduct = await Product.create({
       name,
+      slug,
       description,
       image,
       price,
       amount,
+      category,
+      sold,
+      rating,
     });
     res
       .status(201)
@@ -48,7 +62,17 @@ const readDetailProduct = async (req, res) => {
 // updateProduct
 const updateProduct = async (req, res) => {
   const { id } = req.params;
-  const { name, description, image, price, amount } = req.body;
+  const {
+    name,
+    slug,
+    description,
+    image,
+    price,
+    amount,
+    category,
+    sold,
+    rating,
+  } = req.body;
   try {
     const productUpdate = await Product.findOne({
       where: {
@@ -56,10 +80,14 @@ const updateProduct = async (req, res) => {
       },
     });
     productUpdate.name = name;
+    productUpdate.slug = slug;
     productUpdate.description = description;
     productUpdate.image = image;
     productUpdate.price = price;
     productUpdate.amount = amount;
+    productUpdate.category = category;
+    productUpdate.sold = sold;
+    productUpdate.rating = rating;
     await productUpdate.save();
     res.status(200).send({
       success: true,

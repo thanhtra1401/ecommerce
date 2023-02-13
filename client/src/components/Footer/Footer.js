@@ -126,8 +126,8 @@ const Footer = () => {
           </div>
         </div>
       </Container>
-      <div class="footer__bottom">
-        <p class="footer__text">
+      <div className="footer__bottom">
+        <p className="footer__text">
           © 2023 - Bản quyền thuộc về Công ty TNHH Aobongda.net
         </p>
       </div>

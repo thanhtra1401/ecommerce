@@ -8,6 +8,8 @@ const ProductContextProvider = ({ children }) => {
   const [productState, dispatch] = useReducer(productReducer, {
     products: [],
     product: null,
+    productsLoading: true,
+    productLoading: true,
   });
 
   const [showAddProductModal, setShowAddProductModal] = useState(false);
@@ -28,22 +30,6 @@ const ProductContextProvider = ({ children }) => {
       return error;
     }
   };
-  const getProductDetails = async (id) => {
-    try {
-      const response = await axios.get(
-        `http://localhost:4000/api/products/${id}`
-      );
-      if (response.data.success) {
-        dispatch({
-          type: "PRODUCT_DETAIL_LOADED_SUCCESS",
-          payload: response.data.productDetail,
-        });
-        return response.data;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   //Get all product
   const getProducts = async () => {
@@ -58,6 +44,25 @@ const ProductContextProvider = ({ children }) => {
       }
     } catch (error) {
       dispatch({ type: "PRODUCT_LOADED_FAIL" });
+    }
+  };
+
+  //getDetail product
+  const getDetailProduct = async (id) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:4000/api/products/${id}`
+      );
+
+      if (response.data.success) {
+        dispatch({
+          type: "PRODUCT_DETAIL_LOADED_SUCCESS",
+          payload: response.data.productDetail,
+        });
+        return response.data;
+      }
+    } catch (error) {
+      dispatch({ type: "PRODUCT_DETAIL_LOADED_FAIL" });
     }
   };
 
@@ -111,7 +116,7 @@ const ProductContextProvider = ({ children }) => {
     deleteProduct,
     findProduct,
     updateProduct,
-    getProductDetails,
+    getDetailProduct,
   };
   return (
     <ProductContext.Provider value={productContextData}>

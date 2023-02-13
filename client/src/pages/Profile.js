@@ -1,12 +1,14 @@
 import React from "react";
-import MainLayout from "../layouts/MainLayout";
 
-const Profile = () => {
+import OnlyHeaderLayout from "./../layouts/OnlyHeaderLayout";
+import Profile from "../components/Profile/Profile";
+
+const ProfilePage = () => {
   return (
-    <MainLayout>
-      <div>Profile</div>
-    </MainLayout>
+    <OnlyHeaderLayout>
+      <Profile />
+    </OnlyHeaderLayout>
   );
 };
 
-export default Profile;
+export default ProfilePage;

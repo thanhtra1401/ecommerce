@@ -1,10 +1,12 @@
 import { Container } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "./HeaderDefault.css";
+import Swal from "sweetalert2";
 
 const HeaderDefault = () => {
   const navigate = useNavigate();
   const toLogin = () => {
+    Swal.fire("Bạn cần đăng nhập");
     navigate("/login");
   };
   // const toHome = () => {
@@ -28,11 +30,11 @@ const HeaderDefault = () => {
                 placeholder="Tìm kiếm"
               />
               <div className="header__search-btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
               </div>
             </div>
             <div className="header__cart" onClick={toLogin}>
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping"></i>
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "./HeaderLogin.css";
+
 const HeaderLogin = () => {
   const navigate = useNavigate();
   const toHome = () => {
