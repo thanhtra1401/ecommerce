@@ -27,6 +27,9 @@ module.exports = {
       address: {
         type: Sequelize.STRING,
       },
+      avatar: {
+        type: Sequelize.STRING,
+      },
       type: {
         type: Sequelize.STRING,
       },

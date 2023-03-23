@@ -57,10 +57,10 @@ const ProductDetail = () => {
   } else {
     return (
       <div className="row product__detail mt-3 mb-3">
-        <div className="col-4 product__detail-img">
-          <img src={product.image} alt={product.name} />
+        <div className="col-lg-4 product__detail-img">
+          <img className="detail-img" src={product.image} alt={product.name} />
         </div>
-        <div className="col-8 product__detail-info">
+        <div className="col-lg-8 product__detail-info">
           <h3 className="product__detail-header">{product.name}</h3>
           <span className="product__detail-rating">
             <i className="product__detail-rating--gold fa-solid fa-star"></i>

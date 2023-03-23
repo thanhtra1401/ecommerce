@@ -16,7 +16,7 @@ function Home() {
     <MainLayout>
       <div className="row">
         {products.map((product) => (
-          <div className="col-3" key={product.id}>
+          <div className="col-lg-3 col-md-4 col-sm-6" key={product.id}>
             <SingleProduct product={product} />
           </div>
         ))}

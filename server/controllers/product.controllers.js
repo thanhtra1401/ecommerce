@@ -59,6 +59,21 @@ const readDetailProduct = async (req, res) => {
   }
 };
 
+// read products by category
+const readProductsCategory = async (req, res) => {
+  const { category } = req.params;
+  try {
+    const productList = await Product.findAll({
+      where: {
+        category,
+      },
+    });
+    res.status(200).send({ success: true, productList });
+  } catch (error) {
+    res.status(500).send({ success: false, error });
+  }
+};
+
 // updateProduct
 const updateProduct = async (req, res) => {
   const { id } = req.params;
@@ -136,4 +151,5 @@ module.exports = {
   updateProduct,
   deleteProduct,
   uploadImageProduct,
+  readProductsCategory,
 };

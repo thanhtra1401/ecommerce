@@ -99,4 +99,19 @@ const getDetailUser = async (req, res) => {
     res.status(500).send({ success: false, error });
   }
 };
-module.exports = { register, login, auth, getDetailUser };
+
+//upload avatar
+const uploadAvatar = async (req, res) => {
+  const { file } = req;
+  const urlImage = `http://localhost:4000/${file.path}`;
+  const { id } = req.params;
+  const avatarUpload = await User.findOne({
+    where: {
+      id: id,
+    },
+  });
+  avatarUpload.avatar = urlImage;
+  await avatarUpload.save();
+  res.send(avatarUpload);
+};
+module.exports = { register, login, auth, getDetailUser, uploadAvatar };

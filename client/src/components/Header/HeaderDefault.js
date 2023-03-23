@@ -22,10 +22,14 @@ const HeaderDefault = () => {
             alt="logo"
             // onClick={toHome}
           />
+          <i
+            className="fa-solid fa-magnifying-glass search-mobile-btn"
+            style={{ display: "none" }}
+          ></i>
           <div className="header__search_cart">
-            <div className="header__search">
+            <div className="header__search ">
               <input
-                className="header__search-input"
+                className="header__search-input hide-on-mobile"
                 type="text"
                 placeholder="Tìm kiếm"
               />
@@ -33,12 +37,12 @@ const HeaderDefault = () => {
                 <i className="fa-solid fa-magnifying-glass"></i>
               </div>
             </div>
-            <div className="header__cart" onClick={toLogin}>
+            <div className="header__cart hide-on-mobile" onClick={toLogin}>
               <i className="fa-solid fa-cart-shopping"></i>
             </div>
           </div>
 
-          <div className="header__nav">
+          <div className="header__nav hide-on-mobile">
             <Link to="/register" className="header__nav-register">
               Đăng kí
             </Link>

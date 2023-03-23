@@ -16,7 +16,7 @@ const HeaderRegister = () => {
             alt="logo"
             onClick={toHome}
           />
-          <div className="header__login">Đăng nhập</div>
+          <div className="header__login">Đăng ký</div>
         </div>
       </Container>
     </div>

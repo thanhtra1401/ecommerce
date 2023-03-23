@@ -4,6 +4,9 @@
   justify-content: center;
   background-color: #fafafa;
 }
+.detail-img {
+  max-width: 100%;
+}
 .product__detail-info {
   padding: 20px;
 }

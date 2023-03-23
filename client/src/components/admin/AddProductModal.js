@@ -13,8 +13,9 @@ const AddProductModal = () => {
     image: "",
     price: "",
     amount: "",
+    category: "",
   });
-  const { name, description, image, price, amount } = newProduct;
+  const { name, description, image, price, amount, category } = newProduct;
 
   const handleChange = (e) => {
     setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
@@ -34,6 +35,7 @@ const AddProductModal = () => {
       image: "",
       price: "",
       amount: "",
+      category: "",
     });
     setShowAddProductModal(false);
   };
@@ -92,6 +94,15 @@ const AddProductModal = () => {
               placeholder="Amount"
               name="amount"
               value={amount}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Control
+              type="text"
+              placeholder="Category"
+              name="category"
+              value={category}
               onChange={handleChange}
             />
           </Form.Group>

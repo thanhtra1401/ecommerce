@@ -68,6 +68,7 @@ const Products = () => {
 
             <th>Price</th>
             <th>Amount</th>
+            <th>Category</th>
             <th>Upload</th>
             <th>Action</th>
           </tr>
@@ -77,9 +78,9 @@ const Products = () => {
             <tr key={product.id}>
               <td>{product.id}</td>
               <td>{product.name}</td>
-
               <td>{product.price}</td>
               <td>{product.amount}</td>
+              <td>{product.category}</td>
               <td>
                 <div>
                   <form className="d-flex ">

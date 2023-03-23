@@ -12,7 +12,7 @@ const UpdateProductModal = () => {
 
   //state
   const [updatedProduct, setUpdatedProduct] = useState(product);
-  const { name, description, image, price, amount } = updatedProduct;
+  const { name, description, image, price, amount, category } = updatedProduct;
 
   useEffect(() => setUpdatedProduct(product), [product]);
 
@@ -82,6 +82,15 @@ const UpdateProductModal = () => {
               placeholder="Amount"
               name="amount"
               value={amount}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Control
+              type="text"
+              placeholder="Category"
+              name="category"
+              value={category}
               onChange={handleChange}
             />
           </Form.Group>

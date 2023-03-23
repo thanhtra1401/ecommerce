@@ -47,7 +47,7 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
-  //getDetail product
+  //getDetail product by id
   const getDetailProduct = async (id) => {
     try {
       const response = await axios.get(
@@ -66,12 +66,31 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
+  // get products by category
+  const getProductsCategory = async (category) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:4000/api/products/category/${category}`
+      );
+      if (response.data.success) {
+        dispatch({
+          type: "PRODUCT_LOADED_SUCCESS",
+          payload: response.data.productList,
+        });
+        return response.data;
+      }
+    } catch (error) {
+      dispatch({ type: "PRODUCT_LOADED_FAIL" });
+    }
+  };
+
   //Delete product
   const deleteProduct = async (id) => {
     try {
       const response = await axios.delete(
         `http://localhost:4000/api/products/${id}`
       );
+      console.log(response);
       if (response.data.success) {
         dispatch({ type: "DELETE_PRODUCT", payload: id });
       }
@@ -117,6 +136,7 @@ const ProductContextProvider = ({ children }) => {
     findProduct,
     updateProduct,
     getDetailProduct,
+    getProductsCategory,
   };
   return (
     <ProductContext.Provider value={productContextData}>

@@ -55,7 +55,7 @@ const HeaderLogined = () => {
             </div>
             <div className="header__user">
               <img
-                src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-portrait-176256935.jpg"
+                src={user.avatar}
                 alt="avatar"
                 className="header__user-avatar"
               />
